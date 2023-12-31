@@ -1,0 +1,6 @@
+[submodule "zmk-nodefree-config"]
+	path = zmk-nodefree-config
+	url = ./zmk-nodefree-config
+[submodule "zmk"]
+	path = zmk
+	url = ./zmk
