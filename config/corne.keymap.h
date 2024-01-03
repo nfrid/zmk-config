@@ -78,9 +78,17 @@ ZMK_BEHAVIOR(num_dance, tap_dance,
 
 /* Homerow mods */
 
-#define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4  // left hand
-#define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right hand
-#define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                      // thumbs
+#define KEYS_L \
+  LT0 LT1 LT2 LT3 LT4 LT5 \
+  LM0 LM1 LM2 LM3 LM4 LM5 \
+  LB0 LB1 LB2 LB3 LB4 LB5 // left hand
+#define KEYS_R \
+  RT0 RT1 RT2 RT3 RT4 RT5 \
+  RM0 RM1 RM2 RM3 RM4 RM5 \
+  RB0 RB1 RB2 RB3 RB4 RB5 // right hand
+#define THUMBS \
+  LH2 LH1 LH0 \
+  RH0 RH1 RH2 // thumbs
 
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
@@ -198,8 +206,8 @@ DEFINE_LAYER(def,
 
 DEFINE_LAYER(num,
   ___ ___     &kp N7  &kp N8  &kp N9  ___,
-  ___ &kp N0  &kp N4  &kp N5  &kp N6  ___,
-  ___ ___     &kp N1  &kp N2  &kp N3  ___,
+  ___ &kp N0  &kp N4  &kp N5  &kp N6  &kp K_CANCEL,
+  ___ &kp N0  &kp N1  &kp N2  &kp N3  ___,
 
   ___ ___ ___ ___ ___ ___,
   ___ ___ ___ ___ ___ ___,
