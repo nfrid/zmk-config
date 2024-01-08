@@ -125,14 +125,16 @@ ZMK_UNICODE_SINGLE(comb_acute, N0, N3, N0, N1)
 
 DEFINE_COMBO(xclm_cmb,  &kp EXCL,     LT2 LT3) // we -> !
 DEFINE_COMBO(eql_cmb,   &kp EQL,      LT2 LT1) // er -> =
-DEFINE_COMBO(grav_cmb,  &kp GRAV,     LT2 LT0) // et -> `
+DEFINE_COMBO(grav_cmb,  &kp GRAV,     LT2 LT0) // et -> ` (ru ё)
 DEFINE_COMBO(acut_cmb,  &comb_acute,  LT1 LT0) // rt -> U+0301 (combining acute)
+DEFINE_COMBO(at_cmb_2,  &kp AT,       LT1 LT3) // wr -> @ (ru ")
 
 DEFINE_COMBO(excl_cmb,  &kp PLUS,   RT2 RT3) // io -> +
 DEFINE_COMBO(mns_cmb,   &kp MINUS,  RT1 RT2) // ui -> -
 
 DEFINE_COMBO(pipe_cmb,  &kp PIPE,   LT2 LM3) // se -> |
 DEFINE_COMBO(amps_cmb,  &kp AMPS,   LT2 LM1) // ef -> &
+DEFINE_COMBO(at_cmb,    &kp AT,     LT1 LM2) // dr -> @
 
 DEFINE_COMBO(tab_cmb,   &hml LG(LSHFT) TAB,       LM3 LM4) // as -> tab
 DEFINE_COMBO(lpar_cmb,  &hml LG(LALT)  LPAR,      LM2 LM3) // sd -> (
@@ -148,7 +150,6 @@ DEFINE_COMBO(ctlv_cmb,  &kp LC(V),  LB1 LB2) // cv -> ctrl-v
 DEFINE_COMBO(hsht_cmb,  &kp HASH,   LM2 LB3) // xd -> #
 DEFINE_COMBO(perc_cmb,  &kp PRCT,   LM2 LB1) // dv -> %
 DEFINE_COMBO(bslh_cmb,  &kp BSLH,   LM3 LB2) // cs -> backslash
-DEFINE_COMBO(at_cmb,    &kp AT,     LM1 LB2) // cf -> @
 
 DEFINE_COMBO(star_cmb,  &kp STAR,  RB2 RB3) // ,. -> *
 
@@ -205,9 +206,9 @@ DEFINE_LAYER(def,
 )
 
 DEFINE_LAYER(num,
-  ___ ___     &kp N7  &kp N8  &kp N9  ___,
-  ___ &kp N0  &kp N4  &kp N5  &kp N6  &kp K_CANCEL,
-  ___ &kp N0  &kp N1  &kp N2  &kp N3  ___,
+  ___          ___     &kp N7  &kp N8  &kp N9  ___,
+  &kp K_CANCEL &kp N0  &kp N4  &kp N5  &kp N6  &kp K_CANCEL,
+  ___          &kp N0  &kp N1  &kp N2  &kp N3  ___,
 
   ___ ___ ___ ___ ___ ___,
   ___ ___ ___ ___ ___ ___,
@@ -230,7 +231,7 @@ DEFINE_LAYER(sym,
 
 DEFINE_LAYER(mov,
   ___       ___           ___           ___           ___           &kp TAB,
-  &tog MOV  ___           ___           ___           ___           &kp K_CANCEL,
+  &tog MOV  ___           &kp LG(SPC)   ___           ___           &kp K_CANCEL,
   ___       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt_shft_clr,
 
   ___       ___       &kp INS   ___        ___  ___,
